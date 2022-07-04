@@ -33,17 +33,15 @@ export const useDarkmodeStore = defineStore('darkmodeStore', {
     update(mode: string) {
       switch (mode) {
         case 'light':
-          this.value = { mode: 'light' };
-          if (process.client && typeof window !== 'undefined') {
-            localStorage.theme = 'light';
-            document.documentElement.classList.remove('dark');
-          }
-          break;
-        case 'dark':
           this.value = { mode: 'dark' };
           if (process.client && typeof window !== 'undefined') {
             localStorage.theme = 'dark';
-            document.documentElement.classList.add('dark');
+          }
+          break;
+        case 'dark':
+          this.value = { mode: 'light' };
+          if (process.client && typeof window !== 'undefined') {
+            localStorage.theme = 'light';
           }
           break;
         default:

@@ -3,42 +3,24 @@ import { useDarkmodeStore } from '~/store/darkmode';
 
 const darkmodeStore = useDarkmodeStore();
 
-const state = reactive({
+const data = reactive({
   darkmode: computed(() => darkmodeStore.getMode),
+  performance: performance.now(),
 });
 
 const updateDarkmode = () => {
-  if (state.darkmode) {
-    switch (state.darkmode.mode) {
-      case 'light':
-        darkmodeStore.update('dark');
-        break;
-      case 'dark':
-        darkmodeStore.update('light');
-        break;
-      default:
-        break;
-    }
-  } else {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      darkmodeStore.update('dark');
-    } else {
-      darkmodeStore.update('light');
-    }
-  }
+  darkmodeStore.update(data.darkmode.mode);
 };
 
-onMounted(() => {
-  updateDarkmode();
-});
+// onBeforeMount(async () => {
+//   updateDarkmode();
+// });
 
 watch(
-  () => state.darkmode,
-  (mode, prevMode) => console.log(mode, ' value changed from ', prevMode)
+  () => data.darkmode,
+  (mode, prevMode) => {
+    //console.log(mode, ' value changed from ', prevMode);
+  }
 );
 </script>
 
@@ -54,7 +36,7 @@ watch(
     <span class="dark:hidden">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="fill-sky-100/20 stroke-slate-400 h-6 w-6"
+        class="fill-sky-100/20 stroke-zinc-400 h-6 w-6"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -68,7 +50,7 @@ watch(
     <span class="hidden dark:inline">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="fill-sky-400/20 stroke-slate-500 h-6 w-6"
+        class="fill-sky-400/20 stroke-zinc-500 h-6 w-6"
         viewBox="0 0 20 20"
         fill="currentColor"
       >

@@ -9,13 +9,17 @@
 </script>
 
 <template>
-  <PagesCenterContainer>
-    <div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <h2
-        class="my-6 text-center text-3xl font-extrabold text-slate-700 dark:text-slate-100"
+  <div>
+    <PagesCenterContainer>
+      <div
+        class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8"
       >
-        Hello There!
-      </h2>
-    </div>
-  </PagesCenterContainer>
+        <h2
+          class="my-6 text-center text-3xl font-extrabold text-zinc-700 dark:text-zinc-100"
+        >
+          Hello There!
+        </h2>
+      </div>
+    </PagesCenterContainer>
+  </div>
 </template>

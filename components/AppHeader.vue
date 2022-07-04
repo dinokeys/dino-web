@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// const router = useRouter();
 // const client = useSupabaseClient();
 // const user = useSupabaseUser();
 // const logout = async () => {
@@ -8,20 +7,13 @@
 // };
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-.logo-font {
-  font-family: 'Pacifico', cursive;
-}
-</style>
-
 <template>
   <header
-    class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent"
+    class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-zinc-900/10 dark:border-zinc-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent"
   >
     <div class="max-w-[90rem] mx-auto">
       <div
-        class="py-4 border-b border-slate-900/10 lg:px-8 lg:border-0 dark:border-slate-300/10 mx-4 lg:mx-0"
+        class="py-4 border-b border-zinc-900/10 lg:px-8 lg:border-0 dark:border-zinc-300/10 mx-4 lg:mx-0"
       >
         <div class="relative flex items-center">
           <button
@@ -34,34 +26,35 @@
             "
           >
             <img
-              class="hidden dark:inline text-slate-900 dark:text-white h-7 w-auto"
+              class="hidden dark:inline text-zinc-900 dark:text-white h-7 w-auto"
               src="~/assets/images/dino-white.png"
               alt="Dino"
               data-v-33d85123=""
             />
             <img
-              class="dark:hidden text-slate-900 dark:text-white h-7 w-auto"
+              class="dark:hidden text-zinc-900 dark:text-white h-7 w-auto"
               src="~/assets/images/dino.png"
               alt="Dino"
               data-v-33d85123=""
             />
             <h2
-              class="logo-font ml-1 mr-2 text-center text-xl font-extrabold text-slate-700 dark:text-slate-100"
+              class="logo-font ml-1 mr-2 text-center text-xl font-extrabold text-zinc-700 dark:text-zinc-100"
             >
               Dino
             </h2>
           </button>
           <div class="relative hidden lg:flex items-center ml-auto">
             <nav
-              class="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200"
+              class="text-sm leading-6 font-semibold text-zinc-700 dark:text-zinc-200"
             >
               <ul class="flex space-x-8">
                 <li>
-                  <a
+                  <NuxtLink
                     class="hover:text-sky-500 dark:hover:text-sky-400"
-                    href="/docs/installation"
-                    >Docs</a
+                    to="/login"
                   >
+                    Docs
+                  </NuxtLink>
                 </li>
                 <li>
                   <a
@@ -80,7 +73,7 @@
               </ul>
             </nav>
             <div
-              class="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800"
+              class="flex items-center border-l border-zinc-200 ml-6 pl-6 dark:border-zinc-800"
             >
               <label class="sr-only" id="headlessui-listbox-label-31"
                 >Theme</label
@@ -88,7 +81,7 @@
               <ButtonsDarkMode />
               <a
                 href="https://github.com/dinokeys"
-                class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+                class="ml-6 block text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300"
                 ><span class="sr-only">Tailwind CSS on GitHub</span
                 ><svg
                   viewBox="0 0 16 16"
@@ -107,7 +100,7 @@
                     navigateTo('/login');
                   }
                 "
-                class="ml-6 inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-semibold rounded-md shadow-sm text-slate-600 dark:text-white bg-slate-200 dark:bg-slate-600 hover:bg-slate-300 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500"
+                class="ml-6 inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-semibold rounded-md shadow-sm text-zinc-600 dark:text-white bg-zinc-200 dark:bg-zinc-600 hover:bg-zinc-300 dark:hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
               >
                 Log in
               </button>
@@ -115,7 +108,7 @@
           </div>
           <button
             type="button"
-            class="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300"
+            class="ml-auto text-zinc-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-zinc-600 lg:hidden dark:text-zinc-400 dark:hover:text-zinc-300"
           >
             <span class="sr-only">Search</span
             ><svg
@@ -135,7 +128,7 @@
           <div class="ml-2 -my-1 lg:hidden">
             <button
               type="button"
-              class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+              class="text-zinc-500 w-8 h-8 flex items-center justify-center hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
             >
               <span class="sr-only">Navigation</span
               ><svg width="24" height="24" fill="none" aria-hidden="true">

@@ -17,8 +17,9 @@ export default defineNuxtConfig({
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v2' }],
       bodyAttrs: {
-        class: 'min-h-screen w-full bg-white dark:bg-slate-900',
+        class: 'min-h-screen w-full bg-white dark:bg-zinc-900',
       },
     },
   },
+  // ssr: false, App container is client only -> this set to true allows the body to be before the app, google analytics related purposes
 });
