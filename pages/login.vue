@@ -1,11 +1,29 @@
 <script setup lang="ts">
-// const user = useSupabaseUser();
-// const { auth } = useSupabaseClient();
-// watchEffect(() => {
-//   if (user.value) {
-//     navigateTo('/tasks');
-//   }
-// });
+const user = useSupabaseUser();
+const supabase = useSupabaseClient();
+
+watchEffect(() => {
+  if (user.value) {
+    navigateTo('/home');
+  }
+});
+
+const data = reactive({
+  email: '',
+  password: '',
+});
+
+const login = async () => {
+  const { user, session, error } = await supabase.auth.signUp({
+    email: data.email,
+    password: data.password,
+  });
+  console.log(user);
+  console.log('-----');
+  console.log(session);
+  console.log('-----');
+  console.log(error);
+};
 </script>
 
 <template>
@@ -22,7 +40,7 @@
 
         <div class="mt-8 pb-16 sm:mx-auto sm:w-full sm:max-w-lg">
           <div>
-            <form class="space-y-6" action="#" method="POST">
+            <form class="space-y-6" @submit.prevent="login">
               <div>
                 <label
                   for="email"
@@ -32,6 +50,7 @@
                 </label>
                 <div class="mt-1">
                   <input
+                    v-model="data.email"
                     id="email"
                     name="email"
                     type="email"
@@ -51,6 +70,7 @@
                 </label>
                 <div class="mt-1">
                   <input
+                    v-model="data.password"
                     id="password"
                     name="password"
                     type="password"
